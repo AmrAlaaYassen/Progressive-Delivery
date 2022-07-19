@@ -13,11 +13,11 @@ spec:
           stableIngress: rollouts-demo-stable
       steps:
       - setWeight: 0
+      - setCanaryScale:
+        replicas: 1
       - pause: {}
       - setWeight: 20
       - pause: {}
-      - setCanaryScale:
-          matchTrafficWeight: true
       - setWeight: 50
       - pause: {}
       - setWeight: 70
