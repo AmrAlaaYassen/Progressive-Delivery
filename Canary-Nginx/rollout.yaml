@@ -16,6 +16,8 @@ spec:
       - pause: {}
       - setWeight: 20
       - pause: {}
+      - setCanaryScale:
+          matchTrafficWeight: true
       - setWeight: 50
       - pause: {}
       - setWeight: 70
