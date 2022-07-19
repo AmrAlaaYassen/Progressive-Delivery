@@ -12,7 +12,8 @@ spec:
         nginx:
           stableIngress: rollouts-demo-stable
       steps:
-    
+      - setWeight: 0
+      - pause: {}
       - setWeight: 20
       - pause: {}
       - setWeight: 50
