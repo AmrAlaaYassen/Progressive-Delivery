@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: rollouts-demo
 spec:
-  replicas: 10
+  replicas: 2
   strategy:
     canary:
       # dynamicStableScale: true
@@ -13,6 +13,9 @@ spec:
         nginx:
           stableIngress: rollouts-demo-stable
       steps:
+      # - setWeight: 0
+      # - setCanaryScale:
+      #     replicas: 1
       - pause: {}
       - setWeight: 10
       - pause: {}
