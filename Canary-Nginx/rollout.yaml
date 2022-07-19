@@ -6,17 +6,15 @@ spec:
   replicas: 10
   strategy:
     canary:
+      dynamicStableScale: true
       canaryService: rollouts-demo-canary
       stableService: rollouts-demo-stable
       trafficRouting:
         nginx:
           stableIngress: rollouts-demo-stable
       steps:
-      - setWeight: 0
-      - setCanaryScale:
-          replicas: 1
       - pause: {}
-      - setWeight: 20
+      - setWeight: 10
       - pause: {}
       - setWeight: 50
       - pause: {}
